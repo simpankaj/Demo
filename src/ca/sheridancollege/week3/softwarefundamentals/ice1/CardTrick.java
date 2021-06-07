@@ -40,7 +40,7 @@ public class CardTrick {
         
         String suitStr = scanner.nextLine();
         int suitValue = Integer.parseInt(suitStr);
-        String suit = Card.SUITS[suitValue];
+        String suit = Card.SUITS[suitValue - 1];
         
         System.out.println("Please enter a card value between 1 and 13");
         
@@ -53,7 +53,7 @@ public class CardTrick {
         
         for (int i=0; i<magicHand.length; i++)
         { 
-            if (magicHand[i].getSuit() == suit && magicHand[i].getValue() == value) {
+            if (magicHand[i].getSuit().equals(suit) && magicHand[i].getValue() == value) {
                 System.out.println("The Magic Hand does contain your card");
                 return;
             }
